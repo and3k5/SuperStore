@@ -1,0 +1,30 @@
+﻿body {
+    font-family:sans-serif;
+}
+
+div#page {
+    margin:0px auto;
+    width:700px;
+    border-radius:5px;
+}
+
+div#menu {
+    width: 150px;
+    height: 100%;
+    float:left;
+    background-color: rgb(120,120,120);
+    border-radius:5px;
+}
+
+div#header {
+    width:700px;
+    height:70px;
+    background-color:rgb(128, 128, 128);
+    font-size:40px;
+    padding:30px;
+    border-radius:5px;
+}
+
+div#pageContent {
+    padding:10px;
+}
