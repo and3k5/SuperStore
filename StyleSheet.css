@@ -1,4 +1,6 @@
-﻿body {
+﻿/* MasterPage */
+
+body {
     font-family:sans-serif;
     margin:0px 0px;
 }
@@ -32,4 +34,62 @@ div#pageContent {
     width:auto;
     float:left;
     min-height:300px;
+}
+
+/* Sale Item Web User Control */
+
+.saleItemControl_container {
+    border:2px solid black;
+    border-radius:5px;
+    width:200px;
+    min-height:200px;
+    background-size: 200px auto;
+    background-repeat:no-repeat;
+    font-size:12px;
+}
+
+.saleItemControl_image {
+    width:200px;
+}
+
+.saleItemControl_upper {
+    padding-top:7px;
+    padding-bottom:3px;
+    padding-left:5px;
+    padding-right:5px;
+    width:190px;
+    height:25px;
+    background-color:rgba(255,255,255,0.75);
+    border-radius:5px;
+}
+
+.saleItemControl_space {
+    height:130px;
+    width:100%;
+}
+
+.saleItemControl_lower {
+    padding:5px;
+    width:190px;
+    height:25px;
+    background-color:rgba(255,255,255,0.75);
+    border-radius:5px;
+    transition:height 0.5s;
+    transition-timing-function:ease-in-out;
+}
+
+.saleItemControl_lower:hover {
+    height:175px;
+}
+
+.saleItemControl_description {
+    pointer-events:none;
+    opacity:0;
+    height:0px;
+    transition:height 0.25s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.saleItemControl_lower:hover .saleItemControl_description {
+    opacity:1;
+    height:150px;
 }
