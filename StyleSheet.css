@@ -46,6 +46,7 @@ div#pageContent {
     background-size: 200px auto;
     background-repeat:no-repeat;
     font-size:12px;
+    display: inline-block;
 }
 
 .saleItemControl_image {

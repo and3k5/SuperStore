@@ -23,13 +23,14 @@ public partial class Default2 : System.Web.UI.Page
         con.Open();
         adp.Fill(ds, "SaleItems");
         */
+        con.Open();
         if (con.State == ConnectionState.Open)
         {
             using (SqlDataReader reader = cmd.ExecuteReader())
             {
                 while (reader.Read())
                 {
-                    SaleItemControl item = new SaleItemControl();
+                    SaleItemControl item = (SaleItemControl)LoadControl("~/SaleItemControl.ascx");
                     item.vendor = reader.GetString(2);
                     item.product = reader.GetString(3);
                     item.description = reader.GetString(4);
@@ -42,7 +43,6 @@ public partial class Default2 : System.Web.UI.Page
         {
             tilesDiv.InnerHtml = "SQL connection is not open...";
         }
-
         /*DropDownList1.DataSource = ds;
         DropDownList1.DataValueField = "ProductID";
         DropDownList1.DataTextField = "ModelName";
