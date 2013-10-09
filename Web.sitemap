@@ -12,5 +12,6 @@
         <siteMapNode url="~/Pages/Technology/Computers/Default.aspx" title="Computers"  description="Computers" />
         <siteMapNode url="~/Pages/Technology/Electronics/Default.aspx" title="Electronics"  description="Electronics" />
       </siteMapNode>
+      <siteMapNode url="~/Admin.aspx" title="Admin" description="Admin Page" roles="Admin"></siteMapNode>
     </siteMapNode>
 </siteMap>

@@ -15,19 +15,16 @@ public partial class Default2 : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         SqlConnection con = new SqlConnection(conStr);
-        SqlCommand cmd = new SqlCommand("SELECT * FROM SaleItems WHERE OnSaleShow = '1'", con);
+        SqlCommand cmd = new SqlCommand("SELECT * FROM SaleItems WHERE OnSaleShow = '0'", con);
         SqlDataAdapter adp = new SqlDataAdapter(cmd);
         DataSet ds = new DataSet();
 
         con.Open();
         adp.Fill(ds, "SaleItems");
-        foreach (DataRow r in ds.Tables["SaleItems"].Rows)
-        {
-            ListItem i = new ListItem();
-            i.Text = r["ModelName"].ToString();
-            i.Value = r["ProductId"].ToString();
-            DropDownList1.Items.Add(i);
-        }
+        DropDownList1.DataSource = ds;
+        DropDownList1.DataValueField = "ProductID";
+        DropDownList1.DataTextField = "ModelName";
+        DropDownList1.DataBind();
         con.Close();
     }
 }

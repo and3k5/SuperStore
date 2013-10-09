@@ -13,8 +13,10 @@
     <form id="form1" runat="server">
     <div id="page">
         <div id="header">SuperStore</div>
-        <div id="menu">&nbsp;<asp:TreeView ID="TreeView1" runat="server" DataSourceID="SiteMapDataSource1" ShowLines="True"></asp:TreeView>
-            <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" />
+        <div id="menu">&nbsp;<asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" />
+            <asp:TreeView ID="TreeView1" runat="server" DataSourceID="SiteMapDataSource1" ShowLines="True"></asp:TreeView>
+            <br />
+            <asp:HyperLink ID="LoginL" runat="server" Text="Login" Font-Size="XX-Small" NavigateUrl="~/Login.aspx"></asp:HyperLink>
         </div>
         <div id="pageContent">
              <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
