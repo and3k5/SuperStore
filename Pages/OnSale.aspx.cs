@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Web.Configuration;
 using System.Data.SqlClient;
 using System.Data;
+using ASP;
 using System.Configuration;
 
 public partial class Default2 : System.Web.UI.Page
@@ -15,16 +16,37 @@ public partial class Default2 : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         SqlConnection con = new SqlConnection(conStr);
-        SqlCommand cmd = new SqlCommand("SELECT * FROM SaleItems WHERE OnSaleShow = '0'", con);
-        SqlDataAdapter adp = new SqlDataAdapter(cmd);
+        SqlCommand cmd = new SqlCommand("SELECT ProductID,Category,ProductVendor,ModelName,Description,Image,Price FROM SaleItems WHERE OnSaleShow = '0'", con);
+        /*SqlDataAdapter adp = new SqlDataAdapter(cmd);
         DataSet ds = new DataSet();
 
         con.Open();
         adp.Fill(ds, "SaleItems");
-        DropDownList1.DataSource = ds;
+        */
+        if (con.State == ConnectionState.Open)
+        {
+            using (SqlDataReader reader = cmd.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    SaleItemControl item = new SaleItemControl();
+                    item.vendor = reader.GetString(2);
+                    item.product = reader.GetString(3);
+                    item.description = reader.GetString(4);
+                    item.price = reader.GetDouble(6);
+                    tilesDiv.Controls.Add(item);
+                }
+            }
+        }
+        else
+        {
+            tilesDiv.InnerHtml = "SQL connection is not open...";
+        }
+
+        /*DropDownList1.DataSource = ds;
         DropDownList1.DataValueField = "ProductID";
         DropDownList1.DataTextField = "ModelName";
-        DropDownList1.DataBind();
+        DropDownList1.DataBind();*/
         con.Close();
     }
 }

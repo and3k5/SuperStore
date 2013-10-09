@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="SaleItemControl.ascx.cs" Inherits="SaleItemControl" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="SaleItemControl.ascx.cs" Inherits="SaleItemControl" ClassName="SaleItemControl" %>
 <style>
     .saleItemControl_container {
         border:2px solid black;
