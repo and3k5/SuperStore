@@ -13,12 +13,18 @@
             Price: <%=price %> DKK<br />
             <a href="#" onclick="
                 $('#dialog<%=productid%>').dialog('open');
-                return false;">See comments</a>
+                return false;">See comments</a><br />
+            <a href="#" onclick="
+                $('#composeDialog<%=productid%>').dialog('open');
+                return false;">Post comment</a>
         </div>
     </div>
 </div>
 <div id="dialog<%=productid%>" style="overflow:hidden">
     <iframe id="dialogFrame<%=productid%>" class="sameItemControl_iframe" src="about:blank"></iframe>
+</div>
+<div id="composeDialog<%=productid%>" style="overflow:hidden">
+    <iframe id="composeFrame<%=productid%>" class="sameItemControl_iframe" src="about:blank"></iframe>
 </div>
 <script type="text/javascript">
     $(function () {
@@ -37,6 +43,23 @@
             },
             open: function (ev, ui) {
                 $('#dialogFrame<%=productid%>').attr('src', '/SuperStore/Comments.aspx?pid=<%=productid %>');
+            }
+        });
+        $('#composeDialog<%=productid%>').dialog({
+            autoOpen: false,
+            modal: true,
+            height: 600,
+            width: 600,
+            show: {
+                effect: "fade",
+                duration: 500
+            },
+            hide: {
+                effect: "fade",
+                duration: 500
+            },
+            open: function (ev, ui) {
+                $('#composeFrame<%=productid%>').attr('src', '/SuperStore/ComposeComment.aspx?pid=<%=productid %>');
             }
         });
     });

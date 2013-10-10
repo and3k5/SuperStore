@@ -21,7 +21,7 @@
         </tr>
         <tr>
             <td>Rating:</td>
-            <td>??</td>
+            <td><%=rating %></td>
         </tr>
     </table>
 
