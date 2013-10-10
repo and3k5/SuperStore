@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Books>
+  <Book>
+    <BookId>B001</BookId>
+    <Title>GettingStarted with XML</Title>
+    <Price>$2.5</Price>
+    <Author>
+      <FirstName>Micheal</FirstName>
+      <LastName>Hicks</LastName>
+    </Author>
+    <Author>
+      <FirstName>John</FirstName>
+      <LastName>Williams</LastName>
+    </Author>
+  </Book>
+  <Book>
+    <BookId>B002</BookId>
+    <Title>Understanding XML</Title>
+    <Price>$22.15</Price>
+    <Author>
+      <FirstName>David</FirstName>
+      <LastName>Simpson</LastName>
+    </Author>
+  </Book>
+</Books>
