@@ -35,6 +35,8 @@ public partial class Default2 : System.Web.UI.Page
                     item.product = reader.GetString(3);
                     item.description = reader.GetString(4);
                     item.price = reader.GetDouble(6);
+                    item.productid = reader.GetInt32(0);
+                    if (!reader.IsDBNull(5)) item.image = String.Format("../img/{0}",reader.GetString(5));
                     tilesDiv.Controls.Add(item);
                 }
             }

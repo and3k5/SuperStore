@@ -16,6 +16,7 @@ public partial class SaleItemControl : System.Web.UI.UserControl
     public string product = "Glasses";
     public string description = "Lorem Ipsum blablablablablablablabla lang text hej hej hej 1234";
     public double price = 3333.33;
+    public int productid = -1;
     protected void Page_Load(object sender, EventArgs e)
     {
 
