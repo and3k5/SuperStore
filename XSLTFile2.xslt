@@ -3,10 +3,10 @@
   <xsl:output indent="yes" method="xml" />
   <xsl:template match="/">
     <details>
-      <xsl:apply-templates select="//Details" />
+      <xsl:apply-templates select="//details" />
     </details>
   </xsl:template>
-  <xsl:template match="//Details">
+  <xsl:template match="//details">
     <details>
       <xsl:attribute name="FirstName">
         <xsl:value-of select="FirstName" />
