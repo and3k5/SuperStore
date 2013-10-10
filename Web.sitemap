@@ -5,6 +5,7 @@
         <siteMapNode url="~/Pages/Legal.aspx" title="Legal"  description="Legal Information" />
         <siteMapNode url="~/Pages/Privacy.aspx" title="Privacy"  description="Privacy" />
       </siteMapNode>
+      <siteMapNode url="~/Pages/xmlsite.aspx" title="Xmlfile" description=""></siteMapNode>
       <siteMapNode url="~/Pages/OnSale.aspx" title="On Sale"  description="" />
       <siteMapNode url="~/Pages/Business/Default.aspx" title="Fiction"  description="" />
       <siteMapNode url="~/Pages/Sports/Default.aspx" title="Sports"  description="" />
