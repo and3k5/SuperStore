@@ -86,14 +86,48 @@
         </UpdateParameters>
     </asp:SqlDataSource>
     &nbsp;
-    <asp:DetailsView Visible="false" ID="SaleD" runat="server" AllowPaging="True" AutoGenerateRows="False" DataKeyNames="ProductID" DataSourceID="SqlDataSource1" Height="50px" Width="436px">
+    <asp:DetailsView Visible="False" ID="SaleD" runat="server" AllowPaging="True" AutoGenerateRows="False" DataKeyNames="ProductID" DataSourceID="SqlDataSource1" Height="50px" Width="436px">
         <Fields>
             <asp:BoundField DataField="ProductID" HeaderText="ProductID" InsertVisible="False" ReadOnly="True" SortExpression="ProductID" />
             <asp:BoundField DataField="Category" HeaderText="Category" SortExpression="Category" />
             <asp:BoundField DataField="ProductVendor" HeaderText="ProductVendor" SortExpression="ProductVendor" />
             <asp:BoundField DataField="ModelName" HeaderText="ModelName" SortExpression="ModelName" />
             <asp:BoundField DataField="Description" HeaderText="Description" SortExpression="Description" />
-            <asp:BoundField DataField="Image" HeaderText="Image" SortExpression="Image" />
+            <asp:TemplateField HeaderText="Image" SortExpression="Image">
+                <EditItemTemplate>
+                    <asp:TextBox ID="TextBox1" runat="server" style="visibility:hidden;width:0px;" Text='<%# Bind("Image") %>' ClientIDMode="Static"></asp:TextBox>
+                    <asp:DropDownList runat="server" ID="dropdownImages" OnLoad="dropdownImages_Load" ClientIDMode="Static"></asp:DropDownList>
+                    <asp:Button ID="Button1" runat="server" OnClick="Unnamed_Click" Text="Update list of images" />
+                    <script type="text/javascript">
+                        function updateImageValueField() {
+                            TextBox1.value = dropdownImages.value;
+                        }
+                        function updateDropDownValue() {
+                            dropdownImages.value = TextBox1.value;
+                        }
+                        updateDropDownValue();
+                    </script>
+                    <a href="#" onclick="window.open('UploadImage.aspx','uploadWindow','width=500,height=500,resizable=no,scrollbars=no,status=no,toolbar=no');return false;">Upload new image</a>
+                </EditItemTemplate>
+                <InsertItemTemplate>
+                    <asp:TextBox ID="TextBox2" runat="server" style="visibility:hidden;width:0px;" Text='<%# Bind("Image") %>' ClientIDMode="Static"></asp:TextBox>
+                    <asp:DropDownList runat="server" ID="dropdownImages" OnLoad="dropdownImages_Load" ClientIDMode="Static"></asp:DropDownList>
+                    <asp:Button ID="Button1" runat="server" OnClick="Unnamed_Click" Text="Update list of images" />
+                    <script type="text/javascript">
+                        function updateImageValueField() {
+                            TextBox1.value = dropdownImages.value;
+                        }
+                        function updateDropDownValue() {
+                            dropdownImages.value = TextBox1.value;
+                        }
+                        updateDropDownValue();
+                    </script>
+                    <a href="#" onclick="window.open('UploadImage.aspx','uploadWindow','width=500,height=500,resizable=no,scrollbars=no,status=no,toolbar=no');return false;">Upload new image</a>
+                </InsertItemTemplate>
+                <ItemTemplate>
+                    <asp:Label ID="Label1" runat="server" Text='<%# Bind("Image") %>'></asp:Label>
+                </ItemTemplate>
+            </asp:TemplateField>
             <asp:BoundField DataField="Price" HeaderText="Price" SortExpression="Price" />
             <asp:CheckBoxField DataField="OnSaleShow" HeaderText="OnSaleShow" SortExpression="OnSaleShow" />
             <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" ShowInsertButton="True" />
