@@ -12,13 +12,17 @@
 <body>
     <form id="form1" runat="server">
     <div id="page">
-        <div id="header">SuperStore</div>
+        <div id="header">SuperStore<br />
+            <span class="sitemappathtxt"><asp:SiteMapPath ID="SiteMapPath1" runat="server">
+            </asp:SiteMapPath></span>
+        </div>
         <div id="menu">&nbsp;<asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" />
             <asp:TreeView ID="TreeView1" runat="server" DataSourceID="SiteMapDataSource1" ShowLines="True"></asp:TreeView>
             <br />
             <asp:HyperLink ID="LoginL" runat="server" Text="Login" Font-Size="XX-Small" NavigateUrl="~/Login.aspx"></asp:HyperLink>
         </div>
         <div id="pageContent">
+            <h1><% = Page.Title %></h1>
              <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
         
              </asp:ContentPlaceHolder>

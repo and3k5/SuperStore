@@ -8,7 +8,7 @@ body {
 
 div#page {
     margin:0px 0px;
-    width:100%;
+    width:auto;
     height:100%;
     border-radius:5px;
     white-space:nowrap;
@@ -23,7 +23,7 @@ div#menu {
 }
 
 div#header {
-    width:100%;
+    width:auto;
     height:70px;
     background-color:rgb(128, 128, 128);
     font-size:40px;
@@ -36,9 +36,13 @@ div#pageContent {
     width:auto;
     float:left;
     min-height:300px;
-    white-space:nowrap;
+    white-space:normal;
     display: inline;
     position:absolute;
+}
+
+div#header .sitemappathtxt {
+    font-size:12px;
 }
 
 /* Sale Item Web User Control */
@@ -107,8 +111,25 @@ div#pageContent {
     height:100%;
 }
 
+.tilediv {
+    width:auto;
+}
+
 /* commentItem */
 .commentItem_container {
     width:500px;
     height:100px;
+}
+
+/* other stuff */
+.whackbtn {
+    width:400px;
+    height:400px;
+    background-image:url(img/WAT-Frog.jpg);
+    background-repeat:no-repeat;
+    transform:rotate(45deg);
+    -webkit-transform:rotate(45deg);
+    -ms-transform:rotate(45deg);
+    -moz-transform:rotate(45deg);
+    -o-transform:rotate(45deg);
 }

@@ -15,8 +15,8 @@ public partial class Default2 : System.Web.UI.Page
     private string conStr = WebConfigurationManager.ConnectionStrings["DatabaseSuperStoreConnectionString1"].ConnectionString;
     protected void Page_Load(object sender, EventArgs e)
     {
-        SqlConnection con = new SqlConnection(conStr);
-        SqlCommand cmd = new SqlCommand("SELECT ProductID,Category,ProductVendor,ModelName,Description,Image,Price FROM SaleItems WHERE OnSaleShow = '0'", con);
+        SqlConnection con = new SqlConnection(conStr); 
+        SqlCommand cmd = new SqlCommand("SELECT ProductID,Category,ProductVendor,ModelName,Description,Image,Price FROM SaleItems WHERE OnSaleShow = '1'", con);
         /*SqlDataAdapter adp = new SqlDataAdapter(cmd);
         DataSet ds = new DataSet();
 

@@ -7,6 +7,6 @@
     <script type="text/javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <div id="tilesDiv" runat="server"></div>
+    <div id="tilesDiv" class="tilediv" runat="server"></div>
 </asp:Content>
 

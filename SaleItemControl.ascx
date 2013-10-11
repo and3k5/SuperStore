@@ -16,7 +16,7 @@
                 return false;">See comments</a><br />
             <a href="#" onclick="
                 $('#composeDialog<%=productid%>').dialog('open');
-                return false;">Post comment</a>
+                return false;">Post comment</a><br /><br /><br /><br /><br /><br />
         </div>
     </div>
 </div>
